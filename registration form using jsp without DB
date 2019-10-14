@@ -22,4 +22,26 @@ test.jsp
 
 <html>
 <body>
-<% string s1
+<% string s1=request.getparameter("p");
+   string s2=request.getparameter("cp");
+if(s1.equals(s2))
+{ %
+<jsp:forward page="login.jsp"/>
+<%
+}
+else { %> forward page="index.html"/>
+<%
+}
+>
+</body>
+</html>
+
+
+login.jsp
+
+<html>
+<body>
+<% out.println("login successfull");%>
+
+</html>
+</body>
