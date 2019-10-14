@@ -1,0 +1,41 @@
+//Registration Servlet in Java using JDBC
+
+index.html
+<html>
+    <head>
+        <title>Registration using JDBC</title>
+    </head>
+    <body>
+        <form method="get" action="test">
+            UserName<input type="text" name="Uname">
+            Email<input type="text" name="Uemail">
+            Password<input type="password" name="Upass">
+            Country<input type="text" name="Ucountry">
+            <input type="Submit" value="Submit">
+        </form>
+    </body>
+</html>
+
+test.java
+public void doGet(HttpServletRequest res,HttpServletResponse req) throws ServletException, IOException{
+    String id = req.getParameter("Uname");
+    String ps = req.getParameter("Uemail");
+    String em = req.getParameter("Upass");
+    String co = req.getParameter("Ucountry");
+    try{
+        class.forName("com.mysql.jdbc.Driver");
+        connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql","root","12345");
+        PreparedStatement pst = con.preparedStatement("insert into data values(?,?,?,?)");
+        pst.setString(1,id);
+        pst.setString(2,pr);
+        pst.setString(3,em);
+        pst.setString(4,co);
+        int row = pst.executeUpdate();
+        out.println("<h1>"+row+"Inserted Successfully");
+        conn.close();
+        pst.close();
+    }
+    catch (Exception e) {
+        out.println(e);
+    }
+}
