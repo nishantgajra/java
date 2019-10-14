@@ -1,0 +1,25 @@
+index.html
+
+<html><head>
+<title>New User Registration Page</title>
+</head><body>
+<form method = “get” action="test.jsp" >
+<h1> New User Registration Page</h1>
+Enter User Name 
+<input type="text" name="n1" ><br>
+Enter Password
+<input type="password" name="p" >
+ <br>
+Re-Enter Password
+<input type="password" name="cp" >
+<br>Address
+<input type="text" name="n2" >
+<br>
+<input type="submit" value="submit" >
+</form></body></html>
+	
+test.jsp
+
+<html>
+<body>
+<% string s1
