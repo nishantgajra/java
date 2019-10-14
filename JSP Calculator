@@ -1,0 +1,23 @@
+<!--Calcularor JSP-->
+
+<html>
+    <body>
+        <%
+            int a = Integer.parseInt(request.getParameter("n1"));
+            int b = Integer.parseInt(request.getParameter("n2"));
+            String s = request.getParameter("b");
+            if(s.equals("Add")){
+                out.println("Addition is : "+(a+b));
+            }  
+            else if(s.equals("Sub")){
+                out.println("Substraction is : "+(a-b));
+            }
+            else if(s.equal("Multi")){
+                out.println("Multiplication is : "+(a*b));
+            }
+            else{
+                out.println("Division is : "+(a/b));
+            }
+        %>
+    </body>
+</html>
